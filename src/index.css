@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 40 20% 90%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 40 20% 90%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 20% 90%;
+
+    --primary: 40 54% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 40 54% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 40 20% 18%;
+    --input: 0 0% 15%;
+    --ring: 40 54% 50%;
+
+    --radius: 0.5rem;
+
+    --gold: 40 54% 50%;
+    --gold-light: 40 60% 65%;
+    --gold-dark: 40 50% 35%;
+    --jet: 0 0% 4%;
+    --jet-light: 0 0% 8%;
+    --jet-lighter: 0 0% 12%;
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-subheading: 'Rajdhani', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --gradient-gold: linear-gradient(135deg, hsl(40 54% 50%), hsl(40 60% 65%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 8%));
+    --gradient-glass: linear-gradient(135deg, hsla(0, 0%, 100%, 0.05), hsla(0, 0%, 100%, 0.02));
+
+    --shadow-gold: 0 0 30px -5px hsla(40, 54%, 50%, 0.3);
+    --shadow-elevated: 0 20px 60px -15px hsla(0, 0%, 0%, 0.5);
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 40 54% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 40 20% 18%;
+    --sidebar-ring: 40 54% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  h5, h6 {
+    font-family: var(--font-subheading);
+    letter-spacing: 0.03em;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-secondary/40 backdrop-blur-xl border border-border/50;
+  }
+  .glass-strong {
+    @apply bg-secondary/60 backdrop-blur-2xl border border-border/60;
+  }
+  .gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-filter: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  .gold-border {
+    border-image: var(--gradient-gold) 1;
+  }
+  .gold-glow {
+    box-shadow: var(--shadow-gold);
+  }
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32 px-4 md:px-8;
+  }
+  .grid-bg {
+    background-image: 
+      linear-gradient(hsla(40, 54%, 50%, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(40, 54%, 50%, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .text-shadow-gold {
+    text-shadow: 0 0 40px hsla(40, 54%, 50%, 0.3);
+  }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(0 0% 4%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 4%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(40 54% 50% / 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(40 54% 50% / 0.6);
+}
