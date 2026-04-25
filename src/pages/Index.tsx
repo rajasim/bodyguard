@@ -11,7 +11,7 @@ import serviceVip from "@/assets/service-vip.jpeg";
 import serviceCorporate from "@/assets/service-corporate.jpeg";
 import serviceAviation from "@/assets/service-aviation.jpeg";
 import serviceCombat from "@/assets/service-combat.jpeg";
-import serviceEmergency from "@/assets/service-emergency.jpg";
+import serviceEmergency from "@/assets/service-emergency.jpeg";
 import industryAviation from "@/assets/industry-aviation.jpg";
 import industryCorporate from "@/assets/industry-corporate.jpg";
 import industryHotel from "@/assets/industry-hotel.jpg";
